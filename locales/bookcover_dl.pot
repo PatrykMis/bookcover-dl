@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-24 17:44+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:70
+msgid "Enter URL or ISBN:"
+msgstr ""
+
+#: main.py:102
+msgid "Valid ISBN number"
+msgstr ""
+
+#: main.py:102
+msgid ""
+"The entered number appears to be valid ISBN, but the functionality of "
+"finding the book and downloading its cover is not yet implemented."
+msgstr ""
+
+#: main.py:107
+msgid "Unknown input"
+msgstr ""
+
+#: main.py:107
+msgid ""
+"It looks like the entered input is not a valit URL address nor ISBN number. "
+"Please enter valid URL address, including HTTP or preferably https protocol "
+"or ISBN number, with or without dashes."
+msgstr ""
+
+#: main.py:110
+msgid "Success"
+msgstr ""
+
+#: main.py:110
+msgid ""
+"Successfully saved cover of the book named\n"
+"\"{}\" to\n"
+"\"{}\"."
+msgstr ""
+
+#: main.py:130
+msgid "Warning"
+msgstr ""
+
+#: main.py:130
+msgid ""
+"This service provides book covers with its own branding and possibly a logo "
+"on them.\n"
+"\n"
+"Are you certain you wish to download a cover from this service?"
+msgstr ""
+
+#: main.py:138
+msgid "Unknown service"
+msgstr ""
+
+#: main.py:138
+msgid ""
+"Unfortunately, I don't know how to get cover from this service.\n"
+"\n"
+"Please enter link from Legimi or LubimyCzytać, or enter book's ISBN."
+msgstr ""
+
+#: main.py:171
+msgid "Error"
+msgstr ""
+
+#: main.py:171
+msgid ""
+"Failed to obtain the book cover. Either the URL is wrong or there is some "
+"kind of connection error; perhaps the developer will add a specific logic to "
+"display a more precise cause of this error."
+msgstr ""
+
+#: main.py:181
+msgid "View &Source on GitHub"
+msgstr ""
+
+#: main.py:183
+msgid "View GPL v3 &License"
+msgstr ""
+
+#: main.py:186
+msgid "&About…"
+msgstr ""

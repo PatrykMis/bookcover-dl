@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024 Patryk Miś
+# This file is distributed under the same license as the BookCover-DL package.
+# Patryk Miś <foss@patrykmis.com>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-24 17:44+0100\n"
+"PO-Revision-Date: 2024-03-24 17:46+0100\n"
+"Last-Translator: Patryk Miś <foss@patrykmis.com>\n"
+"Language-Team: \n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#: main.py:70
+msgid "Enter URL or ISBN:"
+msgstr "Wprowadź URL lub ISBN"
+
+#: main.py:102
+msgid "Valid ISBN number"
+msgstr "Poprawny numer ISBN"
+
+#: main.py:102
+msgid ""
+"The entered number appears to be valid ISBN, but the functionality of "
+"finding the book and downloading its cover is not yet implemented."
+msgstr ""
+"Wprowadzony numer wydaje się być prawidłowym numerem ISBN, ale funkcja "
+"wyszukiwania książki i pobierania jej okładki nie jest jeszcze "
+"zaimplementowana."
+
+#: main.py:107
+msgid "Unknown input"
+msgstr "Nieznane wejśćie"
+
+#: main.py:107
+msgid ""
+"It looks like the entered input is not a valit URL address nor ISBN number. "
+"Please enter valid URL address, including HTTP or preferably https protocol "
+"or ISBN number, with or without dashes."
+msgstr ""
+"Wygląda na to, że wprowadzone dane wejściowe nie są prawidłowym adresem URL "
+"ani numerem ISBN. Podaj proszę prawidłowy adres URL, z protokołem HTTP lub "
+"najlepiej https łącznie, albo numer ISBN, z myślnikami lub bez."
+
+#: main.py:110
+msgid "Success"
+msgstr "Sukces"
+
+#: main.py:110
+msgid ""
+"Successfully saved cover of the book named\n"
+"\"{}\" to\n"
+"\"{}\"."
+msgstr ""
+"Pomyślnie zapisano okładkę książki pt.\n"
+"\"{}\" do\n"
+"\"{}\"."
+
+#: main.py:130
+msgid "Warning"
+msgstr "Uwaga"
+
+#: main.py:130
+#, fuzzy
+#| msgid ""
+#| "This service provides book covers with its own branding and possibly a "
+#| "logo on them. Are you certain you wish to download a cover from this "
+#| "service?"
+msgid ""
+"This service provides book covers with its own branding and possibly a logo "
+"on them.\n"
+"\n"
+"Are you certain you wish to download a cover from this service?"
+msgstr ""
+"Ten serwis dostarcza okładki książek z własnym brandingiem i ewentualnym "
+"logo. Czy na pewno chcesz pobrać okładkę z tego serwisu?"
+
+#: main.py:138
+msgid "Unknown service"
+msgstr "Nieznany serwis"
+
+#: main.py:138
+#, fuzzy
+#| msgid ""
+#| "Unfortunately, I don't know how to get cover from this service. Please "
+#| "enter link from Legimi or LubimyCzytać, or enter book's ISBN."
+msgid ""
+"Unfortunately, I don't know how to get cover from this service.\n"
+"\n"
+"Please enter link from Legimi or LubimyCzytać, or enter book's ISBN."
+msgstr ""
+"Niestety, jeszcze nie wiem jak pozyskać okładkę z tego serwisu. Podaj proszę "
+"link z Legimi lub Lubimyczytać, albo numer ISBN."
+
+#: main.py:171
+msgid "Error"
+msgstr "Błąd"
+
+#: main.py:171
+msgid ""
+"Failed to obtain the book cover. Either the URL is wrong or there is some "
+"kind of connection error; perhaps the developer will add a specific logic to "
+"display a more precise cause of this error."
+msgstr ""
+"Nie udało się uzyskać okładki książki. Albo adres URL jest błędny, albo "
+"wystąpił jakiś błąd połączenia; być może programista doda konkretną logikę, "
+"aby wyświetlić dokładniejszą przyczynę tego błędu."
+
+#: main.py:181
+msgid "View &Source on GitHub"
+msgstr "Zobacz &źródło na GitHub"
+
+#: main.py:183
+msgid "View GPL v3 &License"
+msgstr "Zobacz licencję &GPL v3"
+
+#: main.py:186
+msgid "&About…"
+msgstr "&O programie"
+
+#~ msgid "Download Failed"
+#~ msgstr "Pobieranie nieudane"
+
+#~ msgid "Failed to download book cover."
+#~ msgstr "Nie udało się pobrać okładki książki."

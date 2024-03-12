@@ -1,0 +1,7 @@
+bs4
+isbnlib
+pathvalidate
+requests
+validators
+wxPython
+unidecode
