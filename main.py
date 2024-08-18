@@ -67,7 +67,7 @@ class BookCoverDL(wx.Dialog):
 
         sizer = wx.BoxSizer(wx.VERTICAL)
 
-        sizer.Add(wx.StaticText(self, label=_("Enter URL or ISBN:")))
+        sizer.Add(wx.StaticText(self, label=_("Enter URL or ISBN:")), flag=wx.EXPAND|wx.ALL)
         self.url_text = wx.TextCtrl(self, wx.ID_ANY, style=wx.TE_PROCESS_ENTER)
         sizer.Add(self.url_text, flag=wx.EXPAND|wx.ALL)
 

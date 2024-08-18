@@ -4,7 +4,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('locale/pl_PL/LC_MESSAGES/*.mo', 'locale')],
+    datas=[('locales/pl_PL/LC_MESSAGES/*.mo', 'locales')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

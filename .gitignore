@@ -3,3 +3,5 @@ __pycache__
 /dist
 *.mo
 *.pyc
+*.jpg
+*.png

@@ -1,7 +1,9 @@
 bs4
 isbnlib
 pathvalidate
+pyinstaller
 requests
 validators
 wxPython
 unidecode
+urllib3
