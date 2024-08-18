@@ -24,7 +24,7 @@ If you want to tinker with the code, here's how you can get started:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/PatrykMis/bookcover-dl
+   git clone https://github.com/PatrykMis/bookcover-dl.git
    ```
 
 2. Navigate to the project directory:
