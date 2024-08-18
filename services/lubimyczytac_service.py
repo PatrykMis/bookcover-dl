@@ -17,10 +17,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-import re
 import requests
 
 from bs4 import BeautifulSoup
+
 
 def get_book_cover(url):
     """

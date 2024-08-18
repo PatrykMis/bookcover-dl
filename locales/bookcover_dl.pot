@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-24 17:44+0100\n"
+"POT-Creation-Date: 2024-08-19 00:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.py:70
+#: main.py:65
 msgid "Enter URL or ISBN:"
 msgstr ""
 
-#: main.py:102
+#: main.py:98
 msgid "Valid ISBN number"
 msgstr ""
 
-#: main.py:102
+#: main.py:99
 msgid ""
 "The entered number appears to be valid ISBN, but the functionality of "
 "finding the book and downloading its cover is not yet implemented."
@@ -35,29 +35,29 @@ msgstr ""
 msgid "Unknown input"
 msgstr ""
 
-#: main.py:107
+#: main.py:108
 msgid ""
-"It looks like the entered input is not a valit URL address nor ISBN number. "
-"Please enter valid URL address, including HTTP or preferably https protocol "
-"or ISBN number, with or without dashes."
+"It looks like the entered input is not a valid URL address nor ISBN number. "
+"Please enter a valid URL address, including HTTP or preferably HTTPS "
+"protocol, or an ISBN number, with or without dashes."
 msgstr ""
 
-#: main.py:110
+#: main.py:114
 msgid "Success"
 msgstr ""
 
-#: main.py:110
+#: main.py:115
 msgid ""
 "Successfully saved cover of the book named\n"
 "\"{}\" to\n"
 "\"{}\"."
 msgstr ""
 
-#: main.py:130
+#: main.py:145
 msgid "Warning"
 msgstr ""
 
-#: main.py:130
+#: main.py:146
 msgid ""
 "This service provides book covers with its own branding and possibly a logo "
 "on them.\n"
@@ -65,36 +65,36 @@ msgid ""
 "Are you certain you wish to download a cover from this service?"
 msgstr ""
 
-#: main.py:138
+#: main.py:157
 msgid "Unknown service"
 msgstr ""
 
-#: main.py:138
+#: main.py:158
 msgid ""
 "Unfortunately, I don't know how to get cover from this service.\n"
 "\n"
 "Please enter link from Legimi or LubimyCzytać, or enter book's ISBN."
 msgstr ""
 
-#: main.py:171
+#: main.py:194
 msgid "Error"
 msgstr ""
 
-#: main.py:171
+#: main.py:195
 msgid ""
 "Failed to obtain the book cover. Either the URL is wrong or there is some "
 "kind of connection error; perhaps the developer will add a specific logic to "
 "display a more precise cause of this error."
 msgstr ""
 
-#: main.py:181
+#: main.py:207
 msgid "View &Source on GitHub"
 msgstr ""
 
-#: main.py:183
+#: main.py:209
 msgid "View GPL v3 &License"
 msgstr ""
 
-#: main.py:186
+#: main.py:212
 msgid "&About…"
 msgstr ""

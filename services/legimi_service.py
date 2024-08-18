@@ -22,6 +22,7 @@ import requests
 
 from bs4 import BeautifulSoup
 
+
 def get_book_cover(url):
     """
     Extracts URL of the best possible book cover and book title from the given Legimi URL.

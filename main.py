@@ -18,36 +18,30 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 import application
-import builtins
-import gettext
 import isbnlib
 import mimetypes
-import re
+import os
 import requests
-import sys, os
+import sys
 import validators
 import webbrowser
 import wx
 import wx.adv
 
-from datetime import datetime
 from pathvalidate import sanitize_filename
-from services import legimi_service, lubimyczytac_service, isbn_service
+from services import legimi_service, lubimyczytac_service
 from unidecode import unidecode
 from urllib.parse import urlparse, urlunparse
 
-builtins.__dict__['_'] = wx.GetTranslation
+_ = wx.GetTranslation
 bundle_dir = getattr(sys, '_MEIPASS', os.path.abspath(os.path.dirname(__file__)))
 locales_dir = os.path.abspath(os.path.join(bundle_dir, 'locales'))
+
 
 class main(wx.App):
     def init_language(self):
         wx.Locale.AddCatalogLookupPathPrefix(locales_dir)
         self.locale = wx.Locale()
-        # locale = wx.Locale()
-        # if self.locale.GetSystemLanguage() == wx.LANGUAGE_ENGLISH:
-            # return  # Code already in english, so don't initialize.
-        # if not self.locale.Init():
         if not self.locale.Init(self.locale.GetSystemLanguage()):
             wx.LogWarning("This language is not supported by the system.")
         if not self.locale.AddCatalog("BookCover-DL"):
@@ -61,19 +55,20 @@ class main(wx.App):
         main_dlg.Destroy()
         return True
 
+
 class BookCoverDL(wx.Dialog):
     def __init__(self, parent):
         super().__init__(parent, title="BookCover-DL")
 
         sizer = wx.BoxSizer(wx.VERTICAL)
 
-        sizer.Add(wx.StaticText(self, label=_("Enter URL or ISBN:")), flag=wx.EXPAND|wx.ALL)
+        sizer.Add(wx.StaticText(self, label=_("Enter URL or ISBN:")), flag=wx.EXPAND | wx.ALL)
         self.url_text = wx.TextCtrl(self, wx.ID_ANY, style=wx.TE_PROCESS_ENTER)
-        sizer.Add(self.url_text, flag=wx.EXPAND|wx.ALL)
+        sizer.Add(self.url_text, flag=wx.EXPAND | wx.ALL)
 
         btn_sizer = self.CreateSeparatedButtonSizer(wx.OK | wx.CANCEL | wx.HELP)
 
-        sizer.Add(btn_sizer, flag=wx.EXPAND|wx.ALL)
+        sizer.Add(btn_sizer, flag=wx.EXPAND | wx.ALL)
 
         self.SetSizer(sizer)
         sizer.Fit(self)
@@ -99,15 +94,27 @@ class BookCoverDL(wx.Dialog):
                 self.url_text.SetValue(corrected_url)
             image_path = self.download_cover_from_url(input_text)
         elif validation_result == "isbn":
-            self.show_info_dialog(_("Valid ISBN number"), _("The entered number appears to be valid ISBN, but the functionality of finding the book and downloading its cover is not yet implemented."))
+            self.show_info_dialog(
+                _("Valid ISBN number"),
+                _("The entered number appears to be valid ISBN, but the functionality of finding the book "
+                    "and downloading its cover is not yet implemented.")
+            )
             self.download_cover_from_isbn
             return
 
         else:
-            self.show_error_dialog(_("Unknown input"), _("It looks like the entered input is not a valit URL address nor ISBN number. Please enter valid URL address, including HTTP or preferably https protocol or ISBN number, with or without dashes."))
+            self.show_error_dialog(
+                _("Unknown input"),
+                _("It looks like the entered input is not a valid URL address nor ISBN number. Please enter a valid URL "
+                    "address, including HTTP or preferably HTTPS protocol, or an ISBN number, with or without dashes.")
+            )
             return
         if image_path:
-            self.show_info_dialog(_("Success"), _("Successfully saved cover of the book named\n\"{}\" to\n\"{}\".").format(self.book_title, image_path))
+            self.show_info_dialog(
+                _("Success"),
+                _("Successfully saved cover of the book named\n\"{}\" to\n\"{}\".")
+                .format(self.book_title, image_path)
+            )
 
     def validate_input(self, input_text):
         if validators.url(input_text):
@@ -121,23 +128,38 @@ class BookCoverDL(wx.Dialog):
         parsed_url = urlparse(url)
         if parsed_url.scheme == "http":
             parsed_url = parsed_url._replace(scheme="https")
-            return urlunparse((parsed_url.scheme, parsed_url.netloc, parsed_url.path, parsed_url.params, parsed_url.query, parsed_url.fragment))
+            return urlunparse((
+                parsed_url.scheme,
+                parsed_url.netloc,
+                parsed_url.path,
+                parsed_url.params,
+                parsed_url.query,
+                parsed_url.fragment
+            ))
         return None
 
     def download_cover_from_url(self, url):
         parsed_url = urlparse(url)
         if "legimi.pl" in parsed_url.netloc:
-            result = self.show_question_dialog(_("Warning"), _("This service provides book covers with its own branding and possibly a logo on them.\n\nAre you certain you wish to download a cover from this service?"))
+            result = self.show_question_dialog(
+                _("Warning"),
+                _("This service provides book covers with its own branding and possibly a logo on them.\n\n"
+                    "Are you certain you wish to download a cover from this service?")
+            )
             if result == wx.ID_NO:
                 return
-                
+
             service = legimi_service
         elif "lubimyczytac.pl" in parsed_url.netloc:
             service = lubimyczytac_service
         else:
-            self.show_error_dialog(_("Unknown service"), _("Unfortunately, I don't know how to get cover from this service.\n\nPlease enter link from Legimi or LubimyCzytać, or enter book's ISBN."))
+            self.show_error_dialog(
+                _("Unknown service"),
+                _("Unfortunately, I don't know how to get cover from this service.\n\n"
+                    "Please enter link from Legimi or LubimyCzytać, or enter book's ISBN.")
+            )
             return None
-        
+
         self.cover_url, self.book_title = service.get_book_cover(url)
         if self.cover_url is not None and self.book_title is not None:
             response = requests.get(self.cover_url)
@@ -168,7 +190,11 @@ class BookCoverDL(wx.Dialog):
                 print("Failed to download book cover.")
                 return None
         else:
-            self.show_error_dialog(_("Error"), _("Failed to obtain the book cover. Either the URL is wrong or there is some kind of connection error; perhaps the developer will add a specific logic to display a more precise cause of this error."))
+            self.show_error_dialog(
+                _("Error"),
+                _("Failed to obtain the book cover. Either the URL is wrong or there is some kind of connection error; "
+                    "perhaps the developer will add a specific logic to display a more precise cause of this error.")
+            )
             return None
 
     def download_cover_from_isbn(self, isbn):
@@ -227,12 +253,7 @@ class BookCoverDL(wx.Dialog):
         else:
             self.ok_button.Disable()
 
+
 if __name__ == "__main__":
     app = main(False)
     app.ExitMainLoop()
-    # locale = wx.Locale(wx.LANGUAGE_DEFAULT)
-    # locale.AddCatalogLookupPathPrefix("locale")
-    # locale.AddCatalog("BookCover-DL")
-    #language_code = wx.Locale.GetSystemLanguage()
-    # language_name = wx.Locale.GetLanguageName(language_code)
-    # print("System language:", language_name)
