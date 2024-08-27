@@ -4,7 +4,7 @@ BookCover-DL is a wxPython app I created to make it easier to grab book covers f
 
 ## Why I Made This?
 
-The main reason I built this was to help out a blind friend who needed an easy way to get book covers. It also served as a way for me to dive into Python and the WxPython library. That said, this code is more of a playground than a polished piece of software. So, don’t take it as a guideline on how things should be done.
+The main reason I built this was to help out a blind friend who needed an easy way to get book covers. It also served as a way for me to dive into Python and the wxPython library. That said, this code is more of a playground than a polished piece of software. So, don’t take it as a guideline on how things should be done.
 
 ## What to Expect?
 
