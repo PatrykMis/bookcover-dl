@@ -2,6 +2,10 @@
 
 BookCover-DL is a wxPython app I created to make it easier to grab book covers from a couple of services (currently `lubimyczytac.pl` and `legimi.pl`). I initially considered adding an ISBN lookup feature, but it didn't get fully developed. Right now, it can only verify whether the entered ISBN is a valid or invalid number.
 
+## usage
+
+Simply launch the app, paste the URL of the book (preferably `lubimyczytac.pl`) and click `Ok` or press enter. The cover will be saved in the same dir as an executable or main.py if executable not built. Note that legimi.pl adds their branding on the cover which I didn't know when I writing this app; but don't worry: the app will warn about it.
+
 ## Why I Made This?
 
 The main reason I built this was to help out a blind friend who needed an easy way to get book covers. It also served as a way for me to dive into Python and the wxPython library. That said, this code is more of a playground than a polished piece of software. So, don’t take it as a guideline on how things should be done.
