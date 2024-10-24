@@ -12,7 +12,7 @@ The main reason I built this was to help out a blind friend who needed an easy w
 
 ## What to expect?
 
-The code is pretty messy, to be honest. I don't plan on making any big improvements—mostly because I don't have the time or the motivation anymore. But if you find it useful, that's awesome! There isn’t much out there that does this with a simple, screen reader-friendly UI, so I hope this fills that gap for someone.
+The code is pretty messy, to be honest. I don't plan on making any big improvements – mostly because I don't have the time or the motivation anymore. But if you find it useful, that's awesome! There isn’t much out there that does this with a simple, screen reader-friendly UI, so I hope this fills that gap for someone.
 
 ## Future Improvements
 
@@ -40,7 +40,7 @@ If you want to tinker with the code, here's how you can get started:
    ```bash
    pip install -r requirements.txt
    ```
-   Note: This project has been tested with Python v3.12.x and wxPython v4.2.x.
+   Note: This project has been tested with Python v3.12.x, v3.13.x and wxPython v4.2.x.
 
 4. Run the application:
    ```bash
